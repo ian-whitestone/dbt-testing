@@ -1,0 +1,21 @@
+zoolander-postgres:
+  target: dev # default if no target is specified
+  outputs:
+    dev:
+      type: postgres
+      host: "{{ env_var('ZOOLANDER_HOST') }}"
+      user: "{{ env_var('ZOOLANDER_USER') }}"
+      pass: "{{ env_var('ZOOLANDER_PASSWORD') }}"
+      port: 5432
+      dbname: zoolander
+      schema: scratch
+      threads: 1
+    prod:
+      type: postgres
+      host: "{{ env_var('ZOOLANDER_HOST') }}"
+      user: "{{ env_var('ZOOLANDER_USER') }}"
+      pass: "{{ env_var('ZOOLANDER_PASSWORD') }}"
+      port: 5432
+      dbname: zoolander
+      schema: zoolander
+      threads: 1
